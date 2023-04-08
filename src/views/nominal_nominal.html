@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/views.css">
+    <link href='https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900|Montserrat:300,400,500,600,700,800,900' rel='stylesheet' type='text/css'> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Convertir tasa nominal a otra nominal.</title>
+</head>
+<body>
+    <div class="container">
+        <a class="volver" href="/index.html"><i class='bx bx-arrow-back'></i>  VOLVER</a>
+        <h1 class="title">Convertir tasa nominal a otra nominal.</h1>
+        <form action="" class="container_formato" id="formulario">
+            Tasa de interes efectiva
+            <div class="interes">
+                <input type="number" id="interes" pattern="[0-9]" required placeholder="0.00 %">TN
+                <select id="periodo" required>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Bimestral">Bimestral</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Cuatrimestral">Cuatrimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
+                </select>
+            </div>
+            Frecuencia de capitalización:
+            <div class="interes">
+                <select id="capitalizacion" required>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Bimestral">Bimestral</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Cuatrimestral">Cuatrimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
+                </select>
+            </div>
+            <button class="btn_enviar" id="btn_enviar_N_N" type="submit">Enviar</button>
+
+            <p id="info"></p>
+        </form>
+    </div>
+    <script src="/src/js/index.js"></script>
+</body>
+</html>
