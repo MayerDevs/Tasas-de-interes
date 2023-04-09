@@ -4,3 +4,5 @@ Este repositorio contiene conversiones de tasas de interes.
 - Efectiva a efectiva
 - Nominal a efectiva
 - Efectiva a nominal
+- Anticipada a vencida
+- Vencida a anticipada

@@ -105,4 +105,46 @@ if (button == 'btn_enviar_N_N') {
         informacion.innerHTML = `TN${valueCap[0]} ${res} %`
         e.preventDefault()
     })
+} else if (button == 'btn_enviar_V_A') {
+    // VENCIDA A ANTICIPADA
+    const button_N_N = document.getElementById('btn_enviar_V_A')
+    button_N_N.addEventListener('click', (e) => {
+        // valor del interes
+        const interes = document.getElementById('interes').value
+        // valor del periodo del interes
+        const periodo = document.getElementById('periodo')
+        const valueInt = periodo.options[periodo.selectedIndex].value
+        // periodo de capitalización
+        const periodo_req = document.getElementById('periodo_requerido')
+        const valueReq = periodo_req.options[periodo_req.selectedIndex].value
+
+        m = tiempo[valueReq] / tiempo[valueInt]
+        efectiva = (Math.pow(1 + (interes / 100), m) - 1)
+
+        res = (efectiva/(1+efectiva))*100
+
+        informacion.innerHTML = `Ia ${res} %`
+        e.preventDefault()
+    })
+} else if (button == 'btn_enviar_A_V') {
+    // ANTICIPADA A VENCIDA
+    const button_N_N = document.getElementById('btn_enviar_A_V')
+    button_N_N.addEventListener('click', (e) => {
+        // valor del interes
+        const interes = document.getElementById('interes').value
+        // valor del periodo del interes
+        const periodo = document.getElementById('periodo')
+        const valueInt = periodo.options[periodo.selectedIndex].value
+        // periodo de capitalización
+        const periodo_req = document.getElementById('periodo_requerido')
+        const valueReq = periodo_req.options[periodo_req.selectedIndex].value
+
+        m = tiempo[valueReq] / tiempo[valueInt]
+        efectiva = (Math.pow(1 + (interes / 100), m) - 1)
+
+        res = (efectiva/(1-efectiva))*100
+
+        informacion.innerHTML = `Iv ${res} %`
+        e.preventDefault()
+    })
 }
