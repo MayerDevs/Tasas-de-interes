@@ -39,7 +39,7 @@ if (button == 'btn_enviar_N_N') {
             res = interes / (mes[valueInt] * mes[valueCap])
         }
 
-        informacion.innerHTML = `TN${valueCap[0]} ${res} %`
+        informacion.innerHTML = `TN${valueCap[0]} ${res.toFixed(3)} %`
         e.preventDefault()
     })
 } else if (button == 'btn_enviar_N_E') {
@@ -61,7 +61,7 @@ if (button == 'btn_enviar_N_N') {
         m = tiempo[valueEfe] / tiempo[valueCap]
         n = tiempo[valueInt] / tiempo[valueCap]
         res = ((Math.pow(1 + ((interes / 100) / n), m)) - 1) * 100
-        informacion.innerHTML = `TE${valueCap[0]} ${res} %`
+        informacion.innerHTML = `TE${valueCap[0]} ${res.toFixed(3)} %`
         e.preventDefault()
     })
 } else if (button == 'btn_enviar_E_E') {
@@ -79,10 +79,10 @@ if (button == 'btn_enviar_N_N') {
 
         m = tiempo[valueCap] / tiempo[valueInt]
         res = (Math.pow(1 + (interes / 100), m) - 1) * 100
-        informacion.innerHTML = `TE${valueCap[0]} ${res} %`
+        informacion.innerHTML = `TE${valueCap[0]} ${res.toFixed(3)} %`
         e.preventDefault()
     })
-} else if (button == 'btn_enviar_E_N') { // btn_enviar_E_N
+} else if (button == 'btn_enviar_E_N') { 
     // EFECTIVA A NOMINAL
     const button_E_N = document.getElementById('btn_enviar_E_N')
     button_E_N.addEventListener('click', (e) => {
@@ -102,7 +102,7 @@ if (button == 'btn_enviar_N_N') {
         n = tiempo[valueNom] / tiempo[valueCap]
         res = (n * (Math.pow(1 + (interes / 100), m) - 1)) * 100
 
-        informacion.innerHTML = `TN${valueCap[0]} ${res} %`
+        informacion.innerHTML = `TN${valueCap[0]} ${res.toFixed(3)} %`
         e.preventDefault()
     })
 } else if (button == 'btn_enviar_V_A') {
@@ -123,7 +123,7 @@ if (button == 'btn_enviar_N_N') {
 
         res = (efectiva/(1+efectiva))*100
 
-        informacion.innerHTML = `Ia ${res} %`
+        informacion.innerHTML = `Ia ${res.toFixed(3)} %`
         e.preventDefault()
     })
 } else if (button == 'btn_enviar_A_V') {
@@ -144,7 +144,7 @@ if (button == 'btn_enviar_N_N') {
 
         res = (efectiva/(1-efectiva))*100
 
-        informacion.innerHTML = `Iv ${res} %`
+        informacion.innerHTML = `Iv ${res.toFixed(3)} %`
         e.preventDefault()
     })
 }
