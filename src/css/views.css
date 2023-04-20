@@ -82,7 +82,18 @@ a{
     margin-left: 30px;
     margin-top: 10px;
 }
-
+.input_amortizacion{
+    width: 200px;
+}
+table, th, td{
+    color: white;
+    border: 1px solid #ED9B40;
+    border-collapse: collapse;
+    text-align: center;
+}
+td{
+    width: 120px;
+}
 @media (min-width: 600px) {
     .container_links{
         display: grid;

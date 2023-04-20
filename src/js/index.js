@@ -147,4 +147,43 @@ if (button == 'btn_enviar_N_N') {
         informacion.innerHTML = `Iv ${res.toFixed(3)} %`
         e.preventDefault()
     })
+} else if (button == 'btn_enviar_A'){
+    var btn_calc = document.getElementById('btn_enviar_A')
+    var table = document.querySelector("table")
+
+    btn_calc.addEventListener('click', (e)=>{
+        var pago = document.getElementById('pago').value
+        var vp = document.getElementById('vp').value
+        var i = document.getElementById('i').value
+        var n = document.getElementById('n').value
+
+        var j = i/100 
+        var cuota = pago
+        var interes = j
+        var abono 
+        var saldo = vp
+        
+        for (let k = 1; k <= n; k++) {
+            
+            var tr = document.createElement("tr")
+            var td_no = document.createElement("td")
+            var td_cuota = document.createElement("td")
+            var td_interes = document.createElement("td")
+            var td_abono = document.createElement("td")
+            var td_saldo = document.createElement("td")
+        
+            td_no.innerHTML = k
+            td_cuota.innerHTML = `$ ${Number(cuota).toFixed(2)}`
+            interes = saldo * j
+            abono = cuota - interes
+            saldo -= abono
+            
+            td_interes.innerHTML = `$ ${interes.toFixed(2)}`
+            td_abono.innerHTML = `$ ${abono.toFixed(2)}`
+            td_saldo.innerHTML = `$ ${saldo.toFixed(2)}`
+            tr.append(td_no, td_cuota, td_interes, td_abono, td_saldo)
+            table.append(tr)
+            e.preventDefault()
+        }
+    })
 }
